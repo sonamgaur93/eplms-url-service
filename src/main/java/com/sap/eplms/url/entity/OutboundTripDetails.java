@@ -1,8 +1,15 @@
 package com.sap.eplms.url.entity;
-import lombok.Data;
-
-import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Data;
 
 @Data
 @Entity
@@ -26,7 +33,7 @@ public class OutboundTripDetails {
     private String stageCode;
 
     @Column(name = "created_date")
-    private String createdDate;
+    private LocalDate createdDate;
 
     @Column(name = "matnr_code")
     private String matnrCode;
@@ -54,12 +61,15 @@ public class OutboundTripDetails {
 
     @Column(name = "ROYALTY_SLIPNO")
     private String royaltySlipNo;
+    
+    @Column(name = "status", columnDefinition = "varchar(1) default 'A'")
+    private String status;
 
     @Column(name = "EXINVNO")
     private String exInvNo;
 
     @Column(name = "EXINDATE")
-    private String exInDate;
+    private LocalDate exInDate;
 
     @Column(name = "ROAD_PERMIT")
     private String roadPermit;
@@ -114,7 +124,10 @@ public class OutboundTripDetails {
 
     @Column(name = "movement_type")
     private String movementType;
-
+    
+    @Column(name = "no_of_attempts",columnDefinition = "int default 3")
+    private Integer noOfAttempts;
+    
     @Column(name = "urlto_send")
     private String urlToSend;
 
@@ -123,8 +136,5 @@ public class OutboundTripDetails {
 
     @Column(name = "password")
     private String password;
-    
-    @Column(name = "status")
-    private String status;
 
 }

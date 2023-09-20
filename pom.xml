@@ -8,9 +8,9 @@
 		<version>2.7.15</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.sap.eplms.url</groupId>
+	<groupId>com.eplms</groupId>
 	<artifactId>eplms-url-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>eplms-url-service</name>
 	<description>project for eplms url microservice</description>
 	<properties>
